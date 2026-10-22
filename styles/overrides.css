@@ -1,0 +1,75 @@
+/* LCARS Enterprise — structural overrides.
+   Only the runtime-allowlisted surfaces are targeted:
+   body, .topbar, .sidebar, .chat-container, .message-bubble,
+   .input-area, .code-block, button.primary.
+   No descendant/child combinators, no ids, no attribute selectors.
+
+   LAYOUT SAFETY: the LCARS *color* comes entirely from variables.json, which
+   recolors every surface through the derivation engine without touching
+   geometry. This file therefore avoids anything that changes an element's
+   size or position — no text-transform or letter-spacing on the chrome (they
+   widen labels until topbar/sidebar items collide), no ADDED borders (they add
+   width), no border-radius on the scroll/compose chrome, no overlays. We only
+   recolor and, at most, swap an existing border edge for an accent color of the
+   same weight. */
+
+/* Okudagram letterforms on the shell: a condensed face reads LCARS but does
+   not reflow chrome the way uppercasing every label does. */
+body {
+  font-family: "Antonio", "Oswald", "Saira Condensed", "Helvetica Neue Condensed",
+               "Arial Narrow", system-ui, sans-serif;
+}
+
+/* Topbar: recolor only. No uppercase, no letter-spacing, no added border —
+   those pushed the items wider until they overlapped the remote-crews control. */
+.topbar {
+  background: #0a0a0a;
+  color: #ffcc99;
+}
+
+/* Sidebar: recolor only, same reasoning as the topbar. */
+.sidebar {
+  background: #0a0a0a;
+  color: #ffcc99;
+}
+
+/* Chat canvas: deep-space black. No frame/radius so the scroll region and the
+   composer keep their exact geometry. */
+.chat-container {
+  background: #000000;
+}
+
+/* Message bubbles: data-record cards. A left accent rail REPLACES the bubble's
+   own left border (same 5px edge), so it adds no net width; the corner radius
+   stays modest and symmetric so nothing clips. */
+.message-bubble {
+  background: #0d0d0d;
+  border-left: 5px solid #ff9900;
+  color: #ffcc99;
+}
+
+/* Input/composer: recolor the surface only. No added 2px frame and no radius
+   change — those are what made the command line crowd its neighbors. */
+.input-area {
+  background: #0a0a0a;
+  color: #ffcc99;
+}
+
+/* Primary buttons: LCARS pill. Buttons have their own slack, so the rounded
+   amber fill is safe here. */
+button.primary {
+  background: #ff9900;
+  color: #000000;
+  border: none;
+  border-radius: 16px;
+  font-weight: 600;
+}
+button.primary:hover {
+  background: #ffb14e;
+}
+
+/* Code blocks: terminal readout tint. Recolor only. */
+.code-block {
+  background: #080808;
+  color: #ffcc99;
+}

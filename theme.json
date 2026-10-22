@@ -1,0 +1,8 @@
+{
+  "slug": "lcars-enterprise",
+  "name": "LCARS Enterprise",
+  "emoji": "🖖",
+  "level": 2,
+  "formatVersion": 1,
+  "loaderIcons": ["star", "sparkles", "zap", "sun", "moon", "cloud"]
+}
