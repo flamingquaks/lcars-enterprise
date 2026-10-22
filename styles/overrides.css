@@ -13,18 +13,16 @@
    recolor and, at most, swap an existing border edge for an accent color of the
    same weight. */
 
-/* Okudagram letterforms on the shell: a condensed face reads LCARS but does
-   not reflow chrome the way uppercasing every label does. */
-body {
-  font-family: "Antonio", "Oswald", "Saira Condensed", "Helvetica Neue Condensed",
-               "Arial Narrow", system-ui, sans-serif;
-}
-
-/* Topbar: recolor only. No uppercase, no letter-spacing, no added border —
-   those pushed the items wider until they overlapped the remote-crews control. */
+/* Topbar: recolor + an LCARS-ish condensed header face on this ONE surface.
+   A font-family on a single allowlisted surface is permitted and does NOT
+   touch the user's Font Family preference, which governs body/chat text. No
+   uppercase, no letter-spacing, no added border — those pushed the items wider
+   until they overlapped the remote-crews control. */
 .topbar {
   background: #0a0a0a;
   color: #ffcc99;
+  font-family: "Antonio", "Oswald", "Saira Condensed", "Helvetica Neue Condensed",
+               "Arial Narrow", system-ui, sans-serif;
 }
 
 /* Sidebar: recolor only, same reasoning as the topbar. */
