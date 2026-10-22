@@ -1,0 +1,47 @@
+<!-- LCARS Enterprise — main-computer console overlay (Level 2).
+     Static okudagram panel: colored elbow rails, system status readout, and
+     an EPS power-distribution bar graph. Colors use the theme palette vars so
+     the panel tracks dark/light automatically. No script (overlay JS is not a
+     documented/validated capability), so readouts are fixed decorative levels. -->
+<div style="font-family:var(--font-body,system-ui,sans-serif);color:var(--text);padding:6px">
+
+  <!-- command bar -->
+  <div style="display:flex;gap:5px;margin-bottom:5px">
+    <div style="flex:0 0 96px;background:var(--accent);color:var(--accent-fg);border-radius:14px 14px 3px 14px;padding:7px 11px;font-weight:700;font-size:11px">LCARS 47</div>
+    <div style="flex:1;background:var(--term-magenta);color:var(--accent-fg);border-radius:3px;padding:7px 11px;font-weight:600;font-size:11px;display:flex;align-items:center">NCC-1701-D · MAIN COMPUTER</div>
+    <div style="flex:0 0 70px;background:var(--json-num);color:var(--accent-fg);border-radius:3px 14px 14px 3px;padding:7px;font-weight:700;text-align:center;font-size:11px">ONLINE</div>
+  </div>
+
+  <div style="display:flex;gap:5px">
+    <!-- left elbow rail -->
+    <div style="flex:0 0 96px;display:flex;flex-direction:column;gap:5px">
+      <div style="background:var(--accent);color:var(--accent-fg);border-radius:3px;padding:7px 10px;font-weight:600;font-size:10px;min-height:38px;display:flex;align-items:flex-end">SYSTEMS</div>
+      <div style="background:var(--danger-fg);color:var(--bg);border-radius:3px;padding:7px 10px;font-weight:600;font-size:10px">TACTICAL</div>
+      <div style="background:var(--json-str);color:var(--bg);border-radius:3px;padding:7px 10px;font-weight:600;font-size:10px">SCIENCE</div>
+      <div style="background:var(--json-num);color:var(--accent-fg);border-radius:3px 3px 3px 14px;padding:7px 10px;font-weight:600;font-size:10px;flex:1;display:flex;align-items:flex-end">COMMS</div>
+    </div>
+
+    <!-- readout -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:5px">
+      <div style="background:var(--panel);border-left:5px solid var(--accent);border-radius:3px 12px 12px 3px;padding:10px 12px">
+        <div style="color:var(--accent);font-size:11px;font-weight:700;margin-bottom:5px">SYSTEM STATUS</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:11px">
+          <div><div style="color:var(--muted);font-size:9px">WARP CORE</div><div style="color:var(--ok-fg);font-weight:700">NOMINAL</div></div>
+          <div><div style="color:var(--muted);font-size:9px">SHIELDS</div><div style="color:var(--warn-fg);font-weight:700">STANDBY</div></div>
+          <div><div style="color:var(--muted);font-size:9px">SENSORS</div><div style="color:var(--ok-fg);font-weight:700">ONLINE</div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:3px 12px 12px 3px;padding:10px 12px">
+        <div style="color:var(--term-magenta);font-size:10px;font-weight:700;margin-bottom:7px">EPS POWER DISTRIBUTION</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="display:flex;align-items:center;gap:7px"><span style="flex:0 0 78px;font-size:9px;color:var(--muted)">DECK 1-12</span><span style="flex:1;height:9px;background:var(--bg-elevated);border-radius:5px;overflow:hidden"><span style="display:block;height:100%;width:72%;background:var(--accent);border-radius:5px"></span></span></div>
+          <div style="display:flex;align-items:center;gap:7px"><span style="flex:0 0 78px;font-size:9px;color:var(--muted)">DECK 13-24</span><span style="flex:1;height:9px;background:var(--bg-elevated);border-radius:5px;overflow:hidden"><span style="display:block;height:100%;width:58%;background:var(--json-str);border-radius:5px"></span></span></div>
+          <div style="display:flex;align-items:center;gap:7px"><span style="flex:0 0 78px;font-size:9px;color:var(--muted)">DECK 25-36</span><span style="flex:1;height:9px;background:var(--bg-elevated);border-radius:5px;overflow:hidden"><span style="display:block;height:100%;width:64%;background:var(--term-magenta);border-radius:5px"></span></span></div>
+          <div style="display:flex;align-items:center;gap:7px"><span style="flex:0 0 78px;font-size:9px;color:var(--muted)">WEAPONS</span><span style="flex:1;height:9px;background:var(--bg-elevated);border-radius:5px;overflow:hidden"><span style="display:block;height:100%;width:41%;background:var(--danger-fg);border-radius:5px"></span></span></div>
+          <div style="display:flex;align-items:center;gap:7px"><span style="flex:0 0 78px;font-size:9px;color:var(--muted)">LIFE SUPPORT</span><span style="flex:1;height:9px;background:var(--bg-elevated);border-radius:5px;overflow:hidden"><span style="display:block;height:100%;width:88%;background:var(--json-num);border-radius:5px"></span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
